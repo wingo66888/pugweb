@@ -1,0 +1,48 @@
+//- mixin 方法
+mixin title(eng,chi)
+    div(class="title-box")
+        h2(class="title")=eng
+        h1=ch1
+        img(src="imgs/line.png", alt="線條")
+
+//- 產生產品區塊(圖片，產品標題，產品說明)
+mixin product-box(img, tit2, text)
+    div(class="product-box")
+        a(href="#")
+            img(src="imgs/" + img + ".png", alt="產品 照片")
+            hr
+            h2=tit2
+            p=text
+
+<!DOCTYPE html>
+html(lang="zh")
+    head
+        meta(charset="UTF-8")
+        title 狸小路 | 首頁
+        link(rel="stylesheet", href="style.css")
+    body
+        div(id="banner")
+            nav
+                img(src="imgs/LOGO.png", alt="狸小路 LGOO" id="logo")
+                div(id="link")
+                    a(href="#") 最新消息
+                    a(href="#") 產品介紹
+                    a(href="#") 聯絡我們
+        section(id="brands")
+            +title("BRANDS", "狸小路的堅持")
+            p 不加多餘的糖份、油脂，不給不必要的色素裝飾，只有單純原味，與健康分享，不靠防腐香精來增加香氣與保存期限，使甜膩少一點、但保存短一點，讓你吃的無負擔，追求健康多一點。
+            img(src="imgs/brands.png", alt="狸小路 產品")
+
+
+        +title("cake","產品介紹")
+        section(id="product")
+
+            +product-box("cake01", "香蕉巧克力蛋糕$280", "苦甜巧克力的蛋糕體配上新鮮的香蕉切片，再搭上一些鮮奶油，意想不到的搭配組合出意想不到的口感")
+            +product-box("cake02", "貓咬乳酪$200", "單純的以蛋、牛奶、乳酪、日本麵粉、奶油為原料組合出不簡單的口感 ")
+            +product-box("cake03", "貓咬乳酪$200", "單純的以蛋、牛奶、乳酪、日本麵粉、奶油為原料組合出不簡單的口感 ")
+            +product-box("cake04", "貓咬乳酪$200", "單純的以蛋、牛奶、乳酪、日本麵粉、奶油為原料組合出不簡單的口感 ")
+            +product-box("cake05", "貓咬乳酪$200", "單純的以蛋、牛奶、乳酪、日本麵粉、奶油為原料組合出不簡單的口感 ")
+            +product-box("cake06", "貓咬乳酪$200", "單純的以蛋、牛奶、乳酪、日本麵粉、奶油為原料組合出不簡單的口感 ")
+
+        +title("news","最新消息")
+        +title("contact","聯絡我們")
